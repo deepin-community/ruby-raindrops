@@ -1,0 +1,238 @@
+ruby-raindrops (0.20.0-1) UNRELEASED; urgency=medium
+
+  * update
+
+ -- Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Wed, 20 Jul 2022 16:49:17 +0800
+
+ruby-raindrops (0.20.0-1) unstable; urgency=medium
+
+  * Team upload
+  * Drop alternative build dependency on unicorn
+  * New upstream version 0.20.0
+
+ -- Antonio Terceiro <terceiro@debian.org>  Tue, 19 Jul 2022 16:41:50 +0200
+
+ruby-raindrops (0.19.2-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Cédric Boutillier ]
+  * Update team name
+  * Add .gitattributes to keep unwanted files out of the source package
+
+  [ Debian Janitor ]
+  * Update watch file format version to 4.
+
+  [ Antonio Terceiro ]
+  * [ci skip] New upstream version 0.19.2
+    - Builds fine against ruby3.0 (Closes: #996362)
+  * [ci skip] debian/.gitattributes: add newline at the end
+  * debian/control: Bump debhehelper compatibility level to 13
+  * bump Standards-Version to 4.6.0; no changes needed
+  * debian/control: update Homepage and Description from upstream metadata
+  * Depends: drop ruby, add ${ruby:Depends}
+  * debian/control: add Rules-Requires-Root: no
+  * debian/ruby-raindrops.docs: drop obsolete documents
+  * debian/rules: install using the gem layout
+  * Refresh patchesl drop 0003-Set-proper-version-in-gemspec.patch
+  * debian/rules: export VERSION to avoid needing to patch the gemspec
+  * debian/ruby-tests.rake: rename blacklist to rejectlist
+  * debian/rules: don't install archive/*
+  * Remove debian/upstream/metadata; contained bogus info
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sun, 17 Oct 2021 10:19:30 -0300
+
+ruby-raindrops (0.19.0-2) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Pirate Praveen ]
+  * update changelog
+  * revert previous commit meant for stretch-backports
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Debian Janitor ]
+  * Use secure URI in debian/watch.
+  * Bump debhelper from deprecated 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+
+  [ Pirate Praveen ]
+  * Bump minimum version of gem2deb to 1.0~
+  * Bump Standards-Version to 4.5.0 (no changes needed)
+  * Move debian/watch to gemwatch.debian.net
+
+ -- Pirate Praveen <praveen@debian.org>  Tue, 14 Jul 2020 00:45:10 +0530
+
+ruby-raindrops (0.19.0-1) unstable; urgency=medium
+
+  * New upstream version
+  * d/copyright: Use https in format field
+  * d/control: Bump standards version to 4.0.0 (no changes)
+  * d/patches:
+    - Drop unneeded 0003-Make-gemspec-work-without-make-and-olddoc.patch
+    - Add a new one to set a proper gem version in gemspec
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Fri, 18 Aug 2017 14:42:55 +0300
+
+ruby-raindrops (0.17.0-1) unstable; urgency=medium
+
+  [ Cédric Boutillier ]
+  * Use https:// in Vcs-* fields
+  * Run wrap-and-sort on packaging files
+
+  [ Hleb Valoshka ]
+  * Bump Standards-Version to 3.9.8 (no changes)
+  * Imported Upstream version 0.17.0
+  * Refresh patches
+  * Add patch to make gemspec work without `make' and `olddoc'
+  * Allow dh_auto_clean to fail
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Mon, 08 Aug 2016 13:59:39 +0300
+
+ruby-raindrops (0.16.0-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.16.0
+  * Drop 0003-test-test_linux.rb-use-plain-ASCII-in-tempfile-name.patch
+  * Reflect license change to LGPL-2.1+
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Mon, 29 Feb 2016 16:44:41 +0300
+
+ruby-raindrops (0.15.0-3) unstable; urgency=medium
+
+  * debian/ruby-tests.rake: reimplement former blacklist of tests that won't
+    run on the Debian buildds due to missing inet_diag and tcp_diag kernel
+    modules.
+
+ -- Antonio Terceiro <terceiro@debian.org>  Mon, 22 Feb 2016 16:06:55 -0300
+
+ruby-raindrops (0.15.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Refresh packaging with new dh-make-ruby run
+  * 0003-test-test_linux.rb-use-plain-ASCII-in-tempfile-name.patch: fix build
+    against ruby2.3
+
+ -- Antonio Terceiro <terceiro@debian.org>  Mon, 22 Feb 2016 14:46:46 -0300
+
+ruby-raindrops (0.15.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Christian Hofstaedtler <zeha@debian.org>  Wed, 03 Feb 2016 12:24:57 +0000
+
+ruby-raindrops (0.14.0-1) unstable; urgency=medium
+
+  * New upstream release, release to unstable.
+  * Delete upsteamed patch 0001-Test-suite-fix-for-IPv6.patch.
+  * Bump Standards-Version to 3.9.6 (no changes).
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Wed, 01 Jul 2015 17:50:18 +0300
+
+ruby-raindrops (0.13.0-3~exp1) experimental; urgency=medium
+
+  * Team upload.
+  * Build-Depend on ruby-test-unit for ruby 2.2
+  * Target experimental for ruby 2.2.
+
+ -- Christian Hofstaedtler <zeha@debian.org>  Fri, 10 Apr 2015 15:48:25 +0200
+
+ruby-raindrops (0.13.0-2) unstable; urgency=medium
+
+  * Rebuild with newer gem2deb (adds gemspec for all interpreters, current
+    and future).
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Mon, 09 Jun 2014 20:50:38 +0300
+
+ruby-raindrops (0.13.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Remove upstreamed patch 0003-Remove-Scope-IDs-from-IPv6-addresses.patch.
+  * Bump Standards-Version to 3.9.5 (no changes required).
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Sun, 06 Apr 2014 21:45:37 +0300
+
+ruby-raindrops (0.12.0-2) unstable; urgency=low
+
+  [ Hleb Valoshka ]
+  * Disable more tests which require inet_diag or tcp_diag kernel modules
+    as buildd servers don't autoload them (to fix FTBFS). (Closes: #725628)
+
+ -- Jérémy Bobbio <lunar@debian.org>  Mon, 07 Oct 2013 14:20:29 +0200
+
+ruby-raindrops (0.12.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add missed unit tests.
+  * Fix copyright to mention contributors.
+  * Add patch to remove Scope IDs from IPv6 addresses.
+  * Build against gem2deb >= 0.5.0~ to add ruby2.0 and drop ruby1.8 support.
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Thu, 12 Sep 2013 20:53:38 +0300
+
+ruby-raindrops (0.11.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Bump Standards-Version to 3.9.4 (no changes needed).
+  * Remove obsoleted DM-Upload-Allowed.
+  * Update Vcs-* fields to use anonscm.debian.org
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Sat, 17 Aug 2013 11:58:38 +0300
+
+ruby-raindrops (0.10.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Fix Build-Depends (set proper package name for unicorn)
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Tue, 26 Jun 2012 22:45:35 +0300
+
+ruby-raindrops (0.9.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Sun, 17 Jun 2012 16:24:53 +0300
+
+ruby-raindrops (0.8.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Drop patch with backported upstream commit 499e63e2 and
+    useless patch from release 0.8.0-4
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Wed, 16 May 2012 15:04:47 +0300
+
+ruby-raindrops (0.8.0-4) unstable; urgency=low
+
+  * Trying to fix FTBFS on kfreebsd
+  * Disable build on hurd, it dosn't support POSIX shared memory
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Tue, 17 Apr 2012 21:08:46 +0300
+
+ruby-raindrops (0.8.0-3) unstable; urgency=low
+
+  * Disable tests which rely on linux modules tcp_diag and inet_diag
+    (Closes: #661401)
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Fri, 16 Mar 2012 22:01:32 +0300
+
+ruby-raindrops (0.8.0-2) unstable; urgency=low
+
+  [ Hleb Valoshka ]
+  * Backport upstream commit 499e63e2 to fix tests under non-Linux
+  * Update Standards-Version to 3.9.3
+
+  [ Dmitry Borodaenko ]
+  * Invoke unix_listener_stats conditionally, skip the unix socket tests
+    (Closes: #661401)
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Thu, 15 Mar 2012 22:29:22 +0300
+
+ruby-raindrops (0.8.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #660342)
+
+ -- Hleb Valoshka <375gnu@gmail.com>  Sat, 18 Feb 2012 17:07:08 +0300

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+export GEM2DEB_TEST_RUNNER = --check-dependencies
+export DH_RUBY = --gem-install
+export DH_RUBY_GEM_INSTALL_EXCLUDE = archive/*
+
+include GIT-VERSION-FILE
+export VERSION = $(GIT_VERSION)
+
+%:
+	dh $@ --buildsystem=ruby --with ruby
+
+override_dh_auto_clean:
+	dh_auto_clean || true

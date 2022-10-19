@@ -1,0 +1,41 @@
+From: Hleb Valoshka <375GNU@Gmail.COM>
+Date: Tue, 24 Sep 2013 21:55:59 +0300
+Subject: Disable tests which require inet_diag or tcp_diag kernel modules
+
+  These test will fail on buildd servers because they don't autoload
+  kernel modules (at least inet_diag and tcp_diag required for these tests)
+---
+ test/test_linux.rb | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/test/test_linux.rb b/test/test_linux.rb
+index 7808469..749ac55 100644
+--- a/test/test_linux.rb
++++ b/test/test_linux.rb
+@@ -107,7 +107,7 @@ def test_unix_resolves_symlinks
+     assert_equal 1, stats[tmp.path].queued
+   end
+ 
+-  def test_tcp
++  def disable_test_tcp
+     s = TCPServer.new(TEST_ADDR, 0)
+     port = s.addr[1]
+     addr = "#{TEST_ADDR}:#{port}"
+@@ -130,7 +130,7 @@ def test_tcp
+     assert_equal 1, stats[addr].active
+   end
+ 
+-  def test_tcp_reuse_sock
++  def disable_test_tcp_reuse_sock
+     nlsock = Raindrops::InetDiagSocket.new
+     s = TCPServer.new(TEST_ADDR, 0)
+     port = s.addr[1]
+@@ -156,7 +156,7 @@ def test_tcp_reuse_sock
+     nlsock.close
+   end
+ 
+-  def test_tcp_multi
++  def disable_test_tcp_multi
+     s1 = TCPServer.new(TEST_ADDR, 0)
+     s2 = TCPServer.new(TEST_ADDR, 0)
+     port1, port2 = s1.addr[1], s2.addr[1]

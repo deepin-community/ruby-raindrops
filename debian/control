@@ -1,0 +1,31 @@
+Source: ruby-raindrops
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Hleb Valoshka <375gnu@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb (>= 1.6~),
+               rake,
+               ruby-aggregate,
+               ruby-rack,
+               ruby-test-unit
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-raindrops.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-raindrops
+Homepage: https://yhbt.net/raindrops/
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-raindrops
+Architecture: kfreebsd-any linux-any
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${ruby:Depends},
+         ${shlibs:Depends}
+Description: real-time stats for preforking Rack servers
+ raindrops is a real-time stats toolkit to show statistics for Rack HTTP
+ servers.  It is designed for preforking servers such as unicorn, but
+ should support any Rack HTTP server on platforms supporting POSIX shared
+ memory.  It may also be used as a generic scoreboard for sharing atomic
+ counters across multiple processes.
